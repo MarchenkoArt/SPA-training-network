@@ -1,0 +1,20 @@
+.content-profile__wall {
+    margin-top: 50px;
+}
+.content-profile__wall-posts {
+    padding: 50px 0;
+}
+.content-profile__wall-post {
+    display: grid;
+    grid-template-columns: 1fr 12fr;
+    justify-items: start;
+    align-items: center;
+    padding: 30px 0;
+}
+.content-profile__wall-post_avatar {
+    grid-column: 1/2;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}

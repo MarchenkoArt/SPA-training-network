@@ -1,0 +1,66 @@
+.nav-bar {
+    position: fixed;
+    display: grid;
+    top: 0;
+    left: 0;
+    height: 90vh;
+    width: 25%;
+    grid-column: 1/2;
+    background-color: #ffffff;
+    margin-top: 10vh;
+    font-family: "Yanone Kaffeesatz", sans-serif;
+    font-weight: 400;
+    font-size: 21px;
+    letter-spacing: 1px;
+}
+
+.nav-bar__ad {
+    display: grid;
+    height: 30vh;
+    width: 100%;
+    text-align: center;
+}
+
+.nav-bar__ad a, .nav-bar__ad a:active, .nav-bar__ad a:visited {
+    font-weight: 100;
+    font-size: 16px;
+    display: block;
+    color: #426aa4;
+    align-self: end;
+    justify-self: start;
+}
+
+.nav-bar__ad_img {
+    object-fit: cover;
+    width: 150px;
+    height: 150px;
+    margin-bottom: 10px;
+}
+
+.nav-bar ul li {
+    position: relative;
+    margin-top: 30px;
+}
+.nav-bar ul li a, .nav-bar ul li a:active, .nav-bar ul li a:visited {
+    display: block;
+    color: #b1acb2;
+}
+.nav-bar ul li a:hover {
+    color: #000000;
+}
+.nav-bar ul li:before {
+    position: absolute;
+    top: -2px;
+    left: -10px;
+    content: "";
+    background-color: #858382;
+    width: 2px;
+    height: 21px;
+    opacity: 0;
+}
+.nav-bar ul li:hover:before {
+    opacity: 1;
+}
+.nav-bar ul li a.active {
+    color: #000000;
+}
