@@ -1,3 +1,5 @@
+import {renderDOM} from "../render";
+
 let state = {
     profilePage: {
         profileData: {
@@ -34,5 +36,14 @@ let state = {
         ]
     }
 }
+
+export let addPost = (postMessage) => {
+    let newPost = {
+        message: postMessage
+    }
+    state.profilePage.postData.push(newPost);
+    renderDOM(state);
+    console.log(state)
+};
 
 export default state;

@@ -14,13 +14,13 @@ function App(props) {
                 <Header/>
                 <Navbar/>
                 <Route path="/profile" render={ () => <Profile postData={props.state.profilePage.postData}
-                                                               profileData={props.state.profilePage.profileData}/>}/>
+                                                               profileData={props.state.profilePage.profileData}
+                                                               addPost={props.addPost}/>}/>
                 <Route path="/messages" render={ () => <Messages usersData={props.state.messagesPage.usersData}
                                                                  messagesList={props.state.messagesPage.messagesList}/>}/>
             </div>
         </BrowserRouter>
-    )
-        ;
+    );
 }
 
 export default App;

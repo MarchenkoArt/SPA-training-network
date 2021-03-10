@@ -10,7 +10,7 @@ function Wall(props) {
 
     return (
         <div className="content-profile__wall">
-            <SendPosts/>
+            <SendPosts addPost={props.addPost}/>
             <div className="content-profile__wall-posts">
                 {postElements}
             </div>

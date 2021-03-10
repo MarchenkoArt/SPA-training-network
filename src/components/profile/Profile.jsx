@@ -22,7 +22,7 @@ function Profile(props) {
                             Languages: {props.profileData.languages}
                         </div>
                     </div>
-                    <Wall img={props.profileData.avatar} postData={props.postData}/>
+                    <Wall img={props.profileData.avatar} postData={props.postData} addPost={props.addPost}/>
                 </div>
             </div>
         </div>

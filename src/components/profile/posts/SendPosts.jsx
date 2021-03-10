@@ -1,18 +1,22 @@
 import React from 'react'
 import "./SendPosts.css";
 
-function SendPosts() {
+function SendPosts(props) {
 
-    let addPost = () => {
+    let newPostElement = React.createRef();
 
+    let addNewPost = () => {
+        let newPost = newPostElement.current.value;
+        props.addPost(newPost);
     };
+
     return (
         <div>
             <h2 className="content-profile__title">My Posts</h2>
-            <form action="" className="send-form">
-                <textarea name="posts" id="" cols="30" rows="2" id="posts-content"
+            <form className="send-form">
+                <textarea  ref={newPostElement} cols="30" rows="2" id="posts-content"
                                               placeholder="Your news..."/>
-                <button onClick={addPost}>Send</button>
+                <button type="reset" onClick={addNewPost}>Send</button>
             </form>
         </div>
     )
