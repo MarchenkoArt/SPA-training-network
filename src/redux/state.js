@@ -1,3 +1,6 @@
+import profileReducer from "./profileReducer";
+import messageReducer from "./messageReducer";
+
 let store = {
 
     _state: {
@@ -60,31 +63,11 @@ let store = {
     },
 
     dispatch(action) {
-        if (action.type === "ADD-POST") {
-            let newPost = {
-                message: this._state.profilePage.textPost
-            }
-            this._state.profilePage.postData.push(newPost);
-            this._reRender(this._state);
 
-        } else if (action.type === "ADD-MESSAGE") {
-            let newMessage = {
-                from: "me",
-                message: this._state.messagesPage.textMessage
-            }
+        this._state.profilePage = profileReducer(this._state.profilePage, action);
+        this._state.messagesPage = messageReducer(this._state.messagesPage, action);
 
-            this._state.messagesPage.messagesList.push(newMessage);
-            this._reRender(this._state);
-
-        } else if (action.type === "UPDATE-POST") {
-            this._state.profilePage.textPost = action.newText;
-            this._reRender(this._state);
-
-        } else if (action.type === "UPDATE-MESSAGE") {
-            this._state.messagesPage.textMessage = action.newText;
-            this._reRender(this._state);
-        }
-
+        this._reRender(this._state);
     }
 }
 
