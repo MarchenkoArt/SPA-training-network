@@ -1,16 +1,18 @@
 const profileReducer = (state, action) => {
 
-    if (action.type === "ADD-POST") {
-        let newPost = {
-            message: state.textPost
-        }
-        state.postData.push(newPost);
-
-    } else if (action.type === "UPDATE-POST") {
-        state.textPost = action.newText;
+    switch (action.type){
+        case "ADD-POST":
+            let newPost = {
+                message: state.textPost
+            }
+            state.postData.push(newPost);
+            return state;
+        case "UPDATE-POST":
+            state.textPost = action.newText;
+            return state;
+        default:
+            return state;
     }
-
-    return state;
 };
 
 export default profileReducer;

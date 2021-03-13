@@ -1,17 +1,18 @@
 const messageReducer = (state, action) => {
-    if (action.type === "ADD-MESSAGE") {
-        let newMessage = {
-            from: "me",
-            message: state.textMessage
-        }
 
-        state.messagesList.push(newMessage);
-
-    } else if (action.type === "UPDATE-MESSAGE") {
-        state.textMessage = action.newText;
+    switch (action.type) {
+        case "ADD-MESSAGE":
+            let newMessage = {
+                from: "me",
+                message: state.textMessage
+            }
+            state.messagesList.push(newMessage);
+            return state;
+        case "UPDATE-MESSAGE":
+            state.textMessage = action.newText;
+            return state;
+        default: return state;
     }
-
-    return state;
 };
 
 export default messageReducer;
